@@ -12,7 +12,7 @@
 
 <meta name="author" content="Sebastian Ueckert" />
 
-<meta name="date" content="2021-07-27" />
+<meta name="date" content="2022-01-11" />
 
 <title>Getting started</title>
 
@@ -318,7 +318,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Getting started</h1>
 <h4 class="author">Sebastian Ueckert</h4>
-<h4 class="date">2021-07-27</h4>
+<h4 class="date">2022-01-11</h4>
 
 
 
@@ -475,7 +475,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <a class="sourceLine" id="cb21-6" title="6"><span class="st">  </span><span class="kw">compartment</span>(<span class="st">&quot;central&quot;</span>, <span class="dt">volume =</span> <span class="st">&quot;v&quot;</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb21-7" title="7"><span class="st">  </span><span class="kw">flow</span>(<span class="dt">from =</span> <span class="st">&quot;central&quot;</span>, <span class="dt">definition =</span> <span class="op">~</span>cl<span class="op">*</span>C) <span class="op">+</span></a>
 <a class="sourceLine" id="cb21-8" title="8"><span class="st">  </span><span class="kw">obs_additive</span>(effect<span class="op">~</span>emax<span class="op">*</span>C[<span class="st">&quot;central&quot;</span>]<span class="op">/</span>(ec50 <span class="op">+</span><span class="st"> </span>C[<span class="st">&quot;central&quot;</span>]), <span class="dt">var_add =</span> <span class="dv">1</span>)</a></code></pre></div>
-<p>In this model definition, we used two additional parameters and, more importantly, a compartment as well as a flow from that compartment. You should note, how you can use the variable <code>C</code> in the flow definition to refer to the concentration in the “from” compartment. Similarly, you can also use <code>C[&quot;central&quot;]</code> to refer to the concentration in the central compartment when defining the observational model. The <code>A</code> variable provides a reference to the unscaled amount in the compartment.</p>
+<p>In this model definition, we used two additional parameters and, more importantly, a compartment as well as a flow from that compartment. You should note, how you can use the variable <code>C</code> in the flow definition to refer to the concentration in the “from” compartment. Similarly, you can also use <code>C[&quot;central&quot;]</code> to refer to the concentration in the central compartment when defining the observational model. The <code>A</code> variable provides a reference to the amount in the compartment.</p>
 <p>Pay attention to how assemblerr replaces the <code>C</code> variables with the corresponding compartment reference when we render the model like before:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">render</span>(m2)</a></code></pre></div>
 <pre><code>## $PROBLEM

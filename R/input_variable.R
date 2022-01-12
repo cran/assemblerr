@@ -66,17 +66,19 @@ input_variable <- function(name){
 }
 
 #' @param path Dataset path
+#' @param use_only_filename Whether to include the path of the file
 #' @importFrom utils read.csv
 #' @importFrom utils read.table
 #' @export
 #' @rdname input_variables
-dataset <- function(path){
+dataset <- function(path, use_only_filename = FALSE){
   if (grepl(".csv$",path)) {
     tab <- read.csv(path, header = TRUE, nrows = 1, check.names = FALSE)
   }else{
     tab <- read.table(path, header = TRUE, nrows = 1, check.names = FALSE)
   }
-  col_names <- colnames(tab)
+  col_names <- colnames(tab) %>%
+    gsub("[^[:alnum:] ]", "", .)
   if (any(duplicated(col_names))) {
     duplicated_names <- col_names[duplicated(col_names)] %>%
       unique()
@@ -87,6 +89,7 @@ dataset <- function(path){
     )
     col_names <- make.unique(col_names, "_")
   }
+  if (use_only_filename) path <- basename(path)
   purrr::map(tolower(col_names), input_variable) %>%
     purrr::reduce(`+`) +
     metadata("dataset", path)

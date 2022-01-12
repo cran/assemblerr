@@ -1,3 +1,7 @@
+# assemblerr 0.1.1
+* add CWRES to `vars_nm_std`
+* `pk_elimination_linear_nl` gains support for CLmm and Vmax parameterization
+
 # assemblerr 0.1.0
 * First release
 

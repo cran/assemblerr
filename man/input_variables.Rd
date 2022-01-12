@@ -7,12 +7,14 @@
 \usage{
 input_variable(name)
 
-dataset(path)
+dataset(path, use_only_filename = FALSE)
 }
 \arguments{
 \item{name}{Variable name}
 
 \item{path}{Dataset path}
+
+\item{use_only_filename}{Whether to include the path of the file}
 }
 \value{
 A building block of type 'input_variable'

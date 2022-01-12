@@ -8,7 +8,7 @@ Description: Construct pharmacometric nonlinear mixed effect models by combining
     The generated code is optimized for performance by recognizing, for example,
     linear differential equations or differential equations with an analytic 
     solution.
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     c(
     person(given = "Sebastian",
@@ -39,11 +39,12 @@ Authors@R:
     )
 License: MIT + file LICENSE
 Encoding: UTF-8
-Suggests: testthat (>= 3.0.2), knitr, rmarkdown, covr, withr, markdown
-Imports: purrr, rlang, magrittr, methods, glue, vctrs (>= 0.3.4), cli
-        (>= 2.1.0), tidyselect
+Suggests: testthat (>= 3.0.2), knitr, rmarkdown, covr, withr, markdown,
+        devtools
+Imports: purrr (>= 0.3.0), rlang, magrittr, methods, glue, vctrs (>=
+        0.3.4), cli (>= 2.1.0), tidyselect
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 ByteCompile: true
 Collate: 'advans.R' 'generics.R' 'facet.R' 'conversion.R' 'model.R'
         'pk_model.R' 'rendering.R' 'statement.R' 'nm_model.R'
@@ -60,7 +61,7 @@ Collate: 'advans.R' 'generics.R' 'facet.R' 'conversion.R' 'model.R'
 URL: https://github.com/UUPharmacometrics/assemblerr
 BugReports: https://github.com/UUPharmacometrics/assemblerr/issues
 NeedsCompilation: no
-Packaged: 2021-07-27 13:56:14 UTC; seb
+Packaged: 2022-01-11 20:14:18 UTC; seb
 Author: Sebastian Ueckert [aut, cre, cph]
     (<https://orcid.org/0000-0002-3712-0255>),
   Mats O. Karlsson [sad],
@@ -72,4 +73,4 @@ Author: Sebastian Ueckert [aut, cre, cph]
   F. Hoffmann-La Roche Ltd. [fnd]
 Maintainer: Sebastian Ueckert <sebastian.ueckert@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-07-28 11:40:05 UTC
+Date/Publication: 2022-01-12 20:02:46 UTC
